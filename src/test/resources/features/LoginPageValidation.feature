@@ -1,7 +1,7 @@
 #Author: Kerim
 
-@login @smoke
-Feature: Login Page Validation
+@login
+Feature: Successful Login and Homepage Validation
  
 
   Scenario: Login Page Validation

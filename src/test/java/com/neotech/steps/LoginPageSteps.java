@@ -13,7 +13,7 @@ public class LoginPageSteps extends CommonMethods {
 	@Given("Go to Neotech Academy Management System LoginPage")
 	public void go_to_neotech_academy_management_system_login_page() {
 
-		setUp();
+//		setUp();  // done with hooks
 
 		wait(3);
 
@@ -38,11 +38,11 @@ public class LoginPageSteps extends CommonMethods {
 
 	@Then("validate succesfully entry.")
 	public void validate_succesfully_entry() {
-		takeScreenshot(getTimeStamp());
+		// takeScreenshot(getTimeStamp()); done with hooks
 	}
 
 	@Then("Quit browser")
 	public void quit_browser() {
-		tearDown();
+		// tearDown(); done with hooks
 	}
 }

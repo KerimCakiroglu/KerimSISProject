@@ -19,7 +19,7 @@ import io.cucumber.junit.CucumberOptions;
 		dryRun = false,
 
 		// tags can do the same things groups on testng do
-		tags = "@login",
+		tags = "@studentSubTabs",
 
 		monochrome = true,
 

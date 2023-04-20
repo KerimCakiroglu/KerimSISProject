@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.neotech.utils.ConfigsReader;
@@ -19,12 +20,15 @@ public class BaseClass {
 	 * This method will initialize the driver
 	 */
 	public static void setUp() {
+
 		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
 
 		switch (ConfigsReader.getProperty("browser").toLowerCase()) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(options);
 			break;
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
